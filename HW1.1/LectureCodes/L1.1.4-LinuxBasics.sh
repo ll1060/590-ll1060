@@ -3,16 +3,16 @@
 #DESCRIPTION
 #------------------------------------------------------------------------------------
 
-#ASSIGNMENT: 
+#ASSIGNMENT:
       #0) OPEN THIS FILE AND A COMMAND LINE SIDE BY SIDE
-      #1) ONE BY ONE, UNCOMMENT EACH BLOCK OF CODE, 
-            #RUN THE SHELL SCRIPT, OBSERVE THE OUTPUT 
+      #1) ONE BY ONE, UNCOMMENT EACH BLOCK OF CODE,
+            #RUN THE SHELL SCRIPT, OBSERVE THE OUTPUT
       #2) ADD SHORT COMMENTS AS NEEDED, THEN COMMENT THE BLOCK OUT AGAIN
-            #GOOGLE THE COMMANDS IF YOU NEED TO 
-            #OR USE "man" FOR DETAILS 
-            #OR COME SEE ME 
-      #3) MOVE ONTO THE NEXT BLOCK  
-      #4) IF A COMMAND HAS ALREADY BEEN COMMENTED ON THEN YOU DONT NEED TO COMMENT A SECOND TIME 
+            #GOOGLE THE COMMANDS IF YOU NEED TO
+            #OR USE "man" FOR DETAILS
+            #OR COME SEE ME
+      #3) MOVE ONTO THE NEXT BLOCK
+      #4) IF A COMMAND HAS ALREADY BEEN COMMENTED ON THEN YOU DONT NEED TO COMMENT A SECOND TIME
 
       #NOTE: BLOCK COMMENT IN GEDIT IS cntl-m IN SUBL TEXT ITS cntl-/
       #NOTE --> THE CHARACTER "#" COMMENTS OUT A LINE IN A SHELL SCRIPT
@@ -26,10 +26,10 @@ echo "-------------------------------"
 
 echo "0) echo: one of the simpliest commands is 'echo'. It prints whatever is fed to it to the screen"
 echo;       #print blank line
-sleep 5     #pause script execution for 5 seconds 
+sleep 5     #pause script execution for 5 seconds
 
 echo "0) The command 'sleep 5' pauses the script execution for 5 seconds"
-sleep 5  
+sleep 5
 
 printf "\n1) Any command that can be excuted from the command line can also be excuted sequentially in an executable file known as a shell script, usually with the extension '.sh'. To make the file executable, you need to change the file permission using the command 'chmod a+x file_name.sh' \n"
 sleep 10
@@ -38,7 +38,7 @@ echo "
 2) we can define variables 'sleep_time=5'
 "
 
-sleep_time=5 #define variable with time to sleep in seconds 
+sleep_time=5 #define variable with time to sleep in seconds
 
 echo "3) variables are referenced using a $ at the beginning, for example sleep_time="$sleep_time
 
@@ -50,7 +50,7 @@ pwd
 
 sleep $sleep_time
 
-SCRIPT_LOC=${PWD} #SAVE ABSOLUTE PATH TO L1.1.4-LinuxBasics.sh SHELL SCRIPT TO FILE 
+SCRIPT_LOC=${PWD} #SAVE ABSOLUTE PATH TO L1.1.4-LinuxBasics.sh SHELL SCRIPT TO FILE
 
 
 DATE=$(date -Is) #save date as variable $(date +"%Y-%m-%d")
@@ -62,26 +62,26 @@ sleep $sleep_time
 
 
 #---------------------------
-#FILESYSTEM: 
+#FILESYSTEM:
 #---------------------------
 
 echo "------------------------"
 echo "EXPLORE THE LINUX FILE SYSTEM"
 echo "------------------------"
-cd / 
+cd /
 pwd
-ls 
+ls
 
 echo "A------------------------"; sleep $sleep_time
 cd /home/
 pwd
-ls 
+ls
 
 echo "B------------------------"; sleep $sleep_time
-cd ~/; 
+cd ~/;
 pwd
 echo "----------"
-ls -ltr 
+ls -ltr
 echo "----------"
 ls *;
 echo "----------"
@@ -115,11 +115,11 @@ echo "      WOULD DELETE THE ENTIRE OPERATING SYSTEM AND EVERY FILE ON THE LINUX
 echo "C------------------------"; sleep $sleep_time
 
 cd example_directory
-ls 
+ls
 echo "im writing to a file" > file1.dat
 echo "hello computer" > file2.dat
 echo "hello human" >> file2.dat
-ls 
+ls
 more file*.dat
 nano file*.dat
 rm file1.dat
@@ -131,7 +131,7 @@ more file2.dat
 
 
 #---------------------------
-#FOR LOOPS AND WILDCARD *: 
+#FOR LOOPS AND WILDCARD *:
 #---------------------------
 
 #RETURN TO SCRIPT LOCATION
@@ -140,7 +140,7 @@ cd $SCRIPT_LOC
 echo "----HERE-A----"
 ls *.py
 echo "----HERE-B----"
-ls *.sh 
+ls *.sh
 
 echo "----HERE-C----"
 for i in *.py
@@ -152,7 +152,7 @@ sleep 5
 echo "----HERE-D----"
 for i in *.py
 do
-      echo "-----------" $i "-----------" 
+      echo "-----------" $i "-----------"
       grep "np" $i  #print everywhere you see string np in file
 done
 sleep 5
@@ -161,7 +161,7 @@ sleep 5
 echo "----HERE-E----"
 for i in *.py
 do
-      echo "-----------" $i "-----------" 
+      echo "-----------" $i "-----------"
       python $i  #run all python scripts
 done
 sleep 5
@@ -176,21 +176,21 @@ man ls
 man echo
 
 
-# CREATING AN ALIAS 
+# CREATING AN ALIAS
 # alias cd590="cd ~/590-CODES/"
 # cd590
 
-exit #STOP THE SCRIPT 
+exit #STOP THE SCRIPT
 
 
 #------------------------
 #NOTES
 #-------------------------
 
-##IMPORTANT LOCATIONS 
+##IMPORTANT LOCATIONS
 ## /
 ## IS THE BOTTOME OF THE DIRECTORY TREE, SHOULD ALMOST NEVER EDIT THINGS HERE
-      ## IT IS WHERE THE OPERATING SYSTEM AND 
+      ## IT IS WHERE THE OPERATING SYSTEM AND
 
 ##GROUPS
 
@@ -200,3 +200,5 @@ exit #STOP THE SCRIPT
 
 
 ##NAVIGATING THE DIRECTORY TREE
+
+# I HAVE WORKED THROUGH THIS EXAMPLE AND UNDERSTAND IT COMPLETELY

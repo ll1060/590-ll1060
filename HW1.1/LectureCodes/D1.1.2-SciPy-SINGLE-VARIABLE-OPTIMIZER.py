@@ -24,14 +24,14 @@ def f(x):
 N=1000; xmin=-20; xmax=20
 X = np.linspace(xmin,xmax,N)
 
-plt.figure() #INITIALIZE FIGURE 
+plt.figure() #INITIALIZE FIGURE
 FS=18   #FONT SIZE
 plt.xlabel('x', fontsize=FS)
 plt.ylabel('f(x)', fontsize=FS)
 plt.plot(X,f(X),'-')
 
 num_func_eval=0
-def f1(x): 
+def f1(x):
 	global num_func_eval
 	out=f(x)
 	num_func_eval+=1
@@ -42,7 +42,7 @@ def f1(x):
 
 	return out
 
-#INITIAL GUESS 
+#INITIAL GUESS
 xo=xmax #
 #xo=np.random.uniform(xmin,xmax)
 print("INITIAL GUESS: xo=",xo, " f(xo)=",f(xo))
@@ -51,3 +51,5 @@ popt=res.x
 print("OPTIMAL PARAM:",popt)
 
 plt.show()
+
+# I HAVE WORKED THROUGH THIS EXAMPLE AND UNDERSTAND IT COMPLETELY

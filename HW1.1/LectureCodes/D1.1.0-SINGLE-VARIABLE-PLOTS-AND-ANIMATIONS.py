@@ -5,7 +5,7 @@
 #-------------------------------------------
 
 ##-------------------------------------------
-##SIMPLE STATIC 1D PLOT 
+##SIMPLE STATIC 1D PLOT
 ##-------------------------------------------
 
 import matplotlib
@@ -17,14 +17,14 @@ x = np.linspace(0, 10,200)
 y  = np.sin(x)
 y1 = y + np.random.normal(0, 0.5, len(x)) #ADD NOISE
 
-#PLOT 
+#PLOT
 fig, ax = plt.subplots()
 ax.plot(x,y,'-',x,y1,'o')
 plt.show()
 #exit()
 
 ##-------------------------------------------
-##SIMPLE PLOT MOVIE: PLOTING FRAMES FROM LOOP 
+##SIMPLE PLOT MOVIE: PLOTING FRAMES FROM LOOP
 ##-------------------------------------------
 
 
@@ -32,11 +32,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #PARAMETERS
-dt=0.01		#time to pause between frames in seconds 
+dt=0.01		#time to pause between frames in seconds
 x0=0.0; dx=0.1  #mesh parameters
-Nframe=100 
+Nframe=100
 
-plt.figure() #INITIALIZE FIGURE 
+plt.figure() #INITIALIZE FIGURE
 FS=18
 plt.xlabel('Time (s)', fontsize=FS)
 plt.ylabel('Amplitude (cm)', fontsize=FS)
@@ -48,7 +48,7 @@ plt.show()
 #exit()
 
 ##-------------------------------------------
-##SUBPLOT PLOT MOVIE: PLOTING FRAMES FROM LOOP 
+##SUBPLOT PLOT MOVIE: PLOTING FRAMES FROM LOOP
 ##-------------------------------------------
 
 import numpy as np
@@ -56,8 +56,8 @@ import matplotlib.pyplot as plt
 import time
 
 #PARAMETERS
-dt=0.005		#time to pause between frames in seconds 
-NP=100 
+dt=0.005		#time to pause between frames in seconds
+NP=100
 
 x = np.linspace(0,10,NP)
 y = np.exp(-0.1*x)*np.sin(5*x)
@@ -86,13 +86,13 @@ for i in range(0,len(x)):
 ## SMOOTHING+SAVING A PLOT TO PNG AND PDF FILES
 ##-------------------------------------------
 
-#NOTE: PDF IS A "VECTOR IMAGES" 
+#NOTE: PDF IS A "VECTOR IMAGES"
 #i.e will scale well and look good in either large or small windows without becoming grainy
 
 
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.interpolate import interp1d #,spline 
+from scipy.interpolate import interp1d #,spline
 import scipy.signal
 import warnings
 from matplotlib.ticker import FormatStrFormatter
@@ -100,8 +100,8 @@ from matplotlib.ticker import FormatStrFormatter
 warnings.filterwarnings("ignore") #supress all warnings
 
 #GENERATE DATA
-N=1002	#number of data points 
-x=np.linspace(-45,45.0, N); 
+N=1002	#number of data points
+x=np.linspace(-45,45.0, N);
 #ye=np.sin(x) #exact
 ye=x*x*np.sin(x) #exact
 y=ye+np.random.normal(0, 100, N)	#add noise
@@ -126,16 +126,16 @@ window=61 #window must me odd and requires adjustment depending on plot
 #https://riptutorial.com/scipy/example/15878/using-a-savitzky-golay-filter
 ys = scipy.signal.savgol_filter(y, window, 4)  # window size , polynomial order
 
-# #QUADRATICALLY INTERPOLATE THE savgol_filter DATA ONTO LESS DENSE MESH 
+# #QUADRATICALLY INTERPOLATE THE savgol_filter DATA ONTO LESS DENSE MESH
 xs1=np.linspace(min(x), max(x), int(0.25*len(x)))
 F=interp1d(x, ys, kind='quadratic');
-ys1=F(xs1); 
+ys1=F(xs1);
 
 #PLOT
 plt.plot(x, y,'.', markersize=16,color='black',markerfacecolor='white',label="raw data") # ,color='black', markersize=8)
-plt.plot(x,ye,'r-',linewidth=3,label="ground truth") 
-# plt.plot(x,ys,'*',color='blue',linewidth=1.0,label="savgol smoothing") 
-plt.plot(xs1,ys1,'*',color='blue',linewidth=1.0,label="savgol smoothing")  
+plt.plot(x,ye,'r-',linewidth=3,label="ground truth")
+# plt.plot(x,ys,'*',color='blue',linewidth=1.0,label="savgol smoothing")
+plt.plot(xs1,ys1,'*',color='blue',linewidth=1.0,label="savgol smoothing")
 ax.legend()
 
 #PLOT RANGES
@@ -291,4 +291,4 @@ exit()
 # # anim.save(animation_type + '.gif', writer='imagemagick')
 # exit()
 
-
+# I HAVE WORKED THROUGH THIS EXAMPLE AND UNDERSTAND IT COMPLETELY

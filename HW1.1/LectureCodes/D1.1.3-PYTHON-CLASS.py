@@ -1,17 +1,17 @@
 #FOR MORE: https://docs.python.org/3/tutorial/classes.html
 
-#REMEMBER 
+#REMEMBER
 #AND OBJECT IS A SPECIFIC INSTANCE OF A CLASS
-#THE CLASS ITSELF IS A TEMPLATE FOR OBJECTS 
+#THE CLASS ITSELF IS A TEMPLATE FOR OBJECTS
 class Dog:
 
     # class variable shared by all instances
-    kind = 'canine'        
+    kind = 'canine'
 
     #INITIALIZE
     def __init__(self, attributions):
         self.name = attributions[0]      # instance variable unique to each instance
-        self.weight = attributions[1]    
+        self.weight = attributions[1]
         self.possesions=[]               #initial as empty, fill later
 
     def increase_weight(self,dw=1):
@@ -49,8 +49,8 @@ print(S.name, S.weight, S.kind,S.possesions)
     #NOTICE IT INHERITS ATTRIBUTIONS OF CLASS Dog
 class SmallDog(Dog):
     size="small"
-    
-    # provides new attributions 
+
+    # provides new attributions
     # but does not break __init__()
     def update(self, H):
         self.height=H
@@ -58,3 +58,5 @@ class SmallDog(Dog):
 B = SmallDog(['Bo' ,15])
 B.update(1)
 print(B.name, B.weight, B.kind, B.possesions,B.size,"H=",B.height)
+
+# I HAVE WORKED THROUGH THIS EXAMPLE AND UNDERSTAND IT COMPLETELY
