@@ -499,8 +499,15 @@ def generate_plots(objective, NDIM, algo='GD', LR= 0.05, method = 'batch', decay
 
 
 
-# change the function parameter to test different algorithms and batch options
+# change the parameters in the "generate_plots()" function below
+# to test different algorithms and batch options
 
 # algo: 'GD' or 'momentum'
 # method: 'batch' or 'mini-batch' or 'sgd'
-generate_plots(objective_fun,4,method='mini-batch',algo='momentum')
+
+generate_plots(objective_fun,4,method='batch',algo='GD')
+#generate_plots(objective_fun,4,method='mini-batch',algo='GD')
+#generate_plots(objective_fun,4,method='sgd',algo='GD')
+#generate_plots(objective_fun,4,method='batch',algo='momentum')
+#generate_plots(objective_fun,4,method='mini-batch',algo='momentum')
+#generate_plots(objective_fun,4,method='sgd',algo='momentum')
